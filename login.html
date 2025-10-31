@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Pesquisa Sociológica</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        color: white;
+      }
+      .login-container {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        text-align: center;
+      }
+      .login-container h1 {
+        margin-bottom: 20px;
+        color: #ffb56b;
+      }
+      .login-container input {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 10px;
+        border: none;
+      }
+      .login-container button {
+        width: 95%;
+        padding: 10px;
+        background: #ff6a00;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .login-container button:hover {
+        transform: scale(1.05);
+      }
+      .return-button {
+        margin-top: 1px;
+        background: #ff6a00;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 10px;
+        transition: 0.5s;
+        cursor: pointer;
+        box-shadow: rgba(245, 119, 1, 0.562)93 -10px -5px 0px 0px inset;
+        border: none;
+      }
+      .return-button:hover {
+        background: #aa5602;
+        transform: scale(1.1);
+      }
+      .erro {
+        color: #ff4444;
+        padding: 5px;
+        border-radius: 10px;
+        margin-top: 2px;
+        font-weight: bold;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Login</h1>
+      <form id="loginForm">
+        <input type="text" id="usuario" placeholder="Usuário" required /><br />
+        <input type="password" id="senha" placeholder="Senha" required /><br />
+        <button type="submit">Entrar</button>
+      </form>
+      <p id="mensagemErro" class="erro"></p>
+      <button class="return-button" onclick="window.location.href='index.html'">
+        Voltar
+      </button>
+    </div>
+
+    <script>
+      const loginForm = document.getElementById("loginForm");
+      const mensagemErro = document.getElementById("mensagemErro");
+
+      const logins = {
+        grupo1: { senha: "Socio1", pagina: "admin1.html" },
+        grupo2: { senha: "Socio2", pagina: "admin2.html" },
+        grupo3: { senha: "Socio3", pagina: "admin3.html" },
+        grupo5: { senha: "Socio5", pagina: "admin5.html" },
+        grupo4: { senha: "Socio4", pagina: "admin4.html" },
+        grupo6: { senha: "Socio6", pagina: "admin6.html" },
+        grupo7: { senha: "Socio7", pagina: "admin7.html" },
+        professor: { senha: "ProfessorNB", pagina: "admin-master.html" }
+      };  
+
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const usuario = document.getElementById("usuario").value.trim();
+        const senha = document.getElementById("senha").value.trim();
+
+        if (logins[usuario] && logins[usuario].senha === senha) {
+          window.location.href = logins[usuario].pagina;
+        } else {
+          mensagemErro.textContent =
+            "⚠️ Esse login é apenas para pessoas autorizadas! ⚠️";
+        }
+      });
+    </script>
+  </body>
+</html>

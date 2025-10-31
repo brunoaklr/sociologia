@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Grupo 6</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 40px 10px;
+      min-height: 100vh;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      width: 95%;
+      max-width: 1200px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #ffb56b;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9rem;
+      opacity: 50%;
+    }
+
+    .logout-btn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: #ff6a00;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 15px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .logout-btn:hover {
+      background: #ff4500;
+      transform: scale(1.05);
+    }
+
+        .formulario {
+      position: fixed; /* Altera de footer para fixed */
+      bottom: 35px; /* Fixa a 35px do fundo da tela */
+      left: 50%; /* Posiciona a 50% da largura da tela */
+      transform: translateX(-50%); /* Move o elemento para a esquerda em 50% do seu próprio tamanho, centralizando-o */
+      background: #ff6a00;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 15px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+
+
+
+    .formulario:hover {
+      background: #ff4500;
+    }
+
+    .formulario {
+      position: fixed; /* Altera de footer para fixed */
+      bottom: 35px; /* Fixa a 35px do fundo da tela */
+      left: 50%; /* Posiciona a 50% da largura da tela */
+      transform: translateX(-50%); /* Move o elemento para a esquerda em 50% do seu próprio tamanho, centralizando-o */
+      background: #ff6a00;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 15px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+
+
+
+    .formulario:hover {
+      background: #ff4500;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <script>
+    const usuario = sessionStorage.getItem('usuarioLogado');
+    const pagina = "admin6";
+    const acessoPermitido = {
+      admin1: ["grupo1"],
+      admin2: ["grupo2"],
+      admin3: ["grupo3"],
+      admin4: ["grupo4"],
+      admin5: ["grupo5"],
+      admin6: ["grupo6"],
+      admin7: ["grupo7"],
+      admin_master: ["Professor"]
+    };
+  </script>
+
+  <div class="container">
+    <h1>Área Administrativa - Grupo 6</h1>
+    <iframe
+      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkA4TnvfRXUDdUuQ-qBKdQBF02dx_H513nparatFRAe5msU2_kK83wWTAp2vDM8YdJr09Rd80BzJZH/pubhtml?widget=true&amp"></iframe>
+  </div>
+  <button onclick="window.open('https://forms.gle/Tr4ksZXMx3HZsZaY9', '_blank')" alt="formulario" class="formulario">Acessar formulário</button>
+
+  <footer>Área administrativa | E.E.B. Profº João Boos</footer>
+
+  <button class="logout-btn" onclick="logout()">Sair</button>
+
+  <script>
+    function logout() {
+      sessionStorage.removeItem('usuarioLogado');
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+
+
+</html>
+

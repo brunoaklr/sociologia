@@ -1,0 +1,50 @@
+/* popup.css */
+:root {
+  --accent: #ff6a00;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #d1d1d1;
+  overflow: hidden;
+}
+
+/* 🧾 Formulário em tela quase cheia */
+iframe#frm {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 30px;
+  position: absolute;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+p {
+  z-index: 3;
+}
+
+/* 🔙 BOTÃO DE VOLTAR */
+#voltarBtn {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  z-index: 4; /* o mais acima de todos */
+  transition: all 0.3s ease;
+}
+
+#voltarBtn:hover {
+  transform: scale(1.05);
+  background: #ff4500;
+}

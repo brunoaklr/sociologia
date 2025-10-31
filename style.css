@@ -1,0 +1,134 @@
+/* 🌌 RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* 🌠 FUNDO E CONTAINER PRINCIPAL */
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* importante para o footer */
+}
+
+.container {
+  max-width: 400px;
+  width: 90%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* 🔷 LOGO INDEX (se houver) */
+.logo_index {
+  border-radius: 50%;
+  width: 100px;
+  margin-bottom: 15px;
+  border: 2px solid #ff6a00;
+}
+
+/* 🧭 TÍTULO E SUBTEXTO */
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.bio {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+/* 🔘 BOTÕES DOS GRUPOS */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.links button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid #ff6a00;
+  padding: 14px 0;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+}
+
+/* ✨ EFEITO AO PASSAR O MOUSE */
+.links button:hover {
+  background: linear-gradient(135deg, #ff6a00, #ffb347);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* 🌈 ANIMAÇÃO SUAVE DE ENTRADA */
+.links button {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: subir 0.5s ease forwards;
+}
+
+.links button:nth-child(1) { animation-delay: 0.1s; }
+.links button:nth-child(2) { animation-delay: 0.2s; }
+.links button:nth-child(3) { animation-delay: 0.3s; }
+.links button:nth-child(4) { animation-delay: 0.4s; }
+.links button:nth-child(5) { animation-delay: 0.5s; }
+.links button:nth-child(6) { animation-delay: 0.6s; }
+.links button:nth-child(7) { animation-delay: 0.7s; }
+
+@keyframes subir {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🧾 FOOTER */
+footer {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 30%;
+  width: 100%;
+}
+
+/* 🛠️ BOTÃO DE ADMINISTRAÇÃO */
+.admin-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff6a00;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+}
+
+.admin-button:hover {
+  background: #ff4500;
+  transform: scale(1.1);
+  box-shadow: 0 10px 13px rgba(0, 0, 0, 0.5);
+}
